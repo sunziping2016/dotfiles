@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=xkeysnail
+GenericName=Keymapper
+Exec=sh -c "killall xkeysnail; xkeysnail --watch $HOME/.config/xkeysnail/config.py"
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+polybar-msg cmd quit
+p=$(xrandr --query | grep " primary" | cut -d" " -f1)
+for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+    export MONITOR=$m
+    export TRAY_POSITION=none
+    if [[ $m == $p ]]; then
+      TRAY_POSITION=right
+    fi
+    polybar --reload example &
+done
+
+nitrogen --restore
